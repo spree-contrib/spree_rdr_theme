@@ -1,0 +1,72 @@
+body#product-list, body#product-details {
+  background-image: url(/assets/bg.jpg);
+}
+
+body#product-details #banner, body#product-list #banner {
+  height: 143px;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+body#product-details #banner, body#product-list #banner {
+  position: relative;
+}
+body#product-details #banner h1, body#product-list #banner h1 {
+  position: absolute;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 4em;
+  line-height: 140px;
+  text-shadow: rgba(0,0,0,1) 1px 1px 2px;
+}
+
+body#product-list #banner img {
+  position: absolute:
+  top: 0; left: 0;
+  z-index: 1;
+}
+
+body#product-list #main, body#product-details #main, body#content #main {
+  width: 600px;
+  float: left;
+  margin-right: 70px;
+}
+
+#sidebar {
+  width: 290px;
+  float: left;
+}
+
+body#product-list .product {
+  border-top: 1px solid #a3a3a3;
+  border-bottom: 1px solid #a3a3a3;
+  margin-top: -1px;
+}
+
+body#product-list .product h2 {
+  font-size: 1.5em;
+  margin: 10px 0 0;
+}
+
+body#product-list .product .image {
+  width: 280px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+body#product-list .product .details {
+  float: left;
+  width: 320px;
+}
+
+body#product-list .product .details p {
+  margin: 14px 0;
+}
+
+body#product-list .product .description {
+  clear: left;
+}
+
+body#product-list #main .list {
+  margin-bottom: 20px;
+}

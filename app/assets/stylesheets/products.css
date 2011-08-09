@@ -1,0 +1,117 @@
+body#product-list h1, body#product-details h1 {
+  margin: 0px;
+}
+body#product-details #product-images {
+  width: 380px;
+  margin-bottom: 20px;
+}
+
+body#product-details #cart-form {
+  width: 220px;
+}
+
+body#product-details #product-images, body#product-details #cart-form {
+  float: left;
+}
+
+body#product-details #product-description {
+  clear: left;
+  border-top: 1px solid #A3A3A3;
+  padding-top: 10px;
+}
+
+#product-images #main-image {
+  width: 350px;
+  text-align: center;
+  min-height: 240px;
+}
+
+#product-images #thumbnails ul {
+  list-style: none;
+  background-color: #ff0;
+}
+
+#product-images #thumbnails li {
+  background-color: #0ff;
+}
+
+#product-images #thumbnails li a {
+  display: block;
+  width: 45px;
+  min-height: 35px;
+  float: left;
+  border: 2px solid #ccc;
+  margin: 0 2px 0 2px;
+  text-align: center;
+}
+
+#product-images #thumbnails li a img {
+  width: 45px;
+}
+
+#product-images #thumbnails li a:hover {
+  border: 2px solid #31519A;
+}
+
+#cart-form {
+  margin-bottom: 20px;
+}
+
+#cart-form form {
+  width: 220px;
+}
+
+#cart-form dl {
+  font-size: 1.2em;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0 5px 0;
+}
+
+#cart-form dt, #cart-form dd {
+  float: left;
+  line-height: 1.5em;
+}
+
+#cart-form dt {
+  clear: left;
+  color: #666;
+  width: 140px;
+}
+
+#cart-form dd {
+  width: 80px;
+  text-align: right;
+  font-size: 1.1em;
+}
+
+#cart-form dd .price {
+  font-size: 1em;
+}
+
+hr {
+  clear: left;
+  visibility: hidden;
+}
+
+#cart-form dl.part-numbers {
+  font-size: 0.8em;
+}
+
+dl.prices {
+  border-top: 1px solid #A7A7A7;
+}
+
+dl.part-numbers dd {
+  font-weight: bold;
+}
+
+#cart-form .extras input {
+  float: left;
+  height: 30px;
+}
+
+#cart-form .extras label {
+  margin-left: 20px;
+  display: block;
+}

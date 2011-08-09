@@ -1,0 +1,129 @@
+/* @override
+    http://localhost:3000/stylesheets/homepage.css?1295539030
+	http://localhost:3000/stylesheets/homepage.css
+*/
+
+body#homepage { background-image: url('/assets/bg.jpg') }
+
+#homepage #banner {
+  height: 340px;
+  position: relative;
+  height: 340px;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+div#banner div.button {
+  position: absolute;
+  top: 49px;
+  left: 640px;
+}
+div#banner div.button img {
+  margin-bottom: 20px;
+}
+div#banner section {
+  height: 303px;
+}
+
+header a, #banner nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+#banner nav {
+  width: 100%;
+}
+#banner nav ul {width:100%;}
+#banner nav ul li {
+  width: 215px;
+  list-style: none;
+  display: block;
+  float: left;
+  line-height: 1em;
+  text-align: center;
+  padding-top: 3px;
+}
+#banner nav ul li.first, #banner nav ul li.last {
+  width: 50px;
+  font-weight: bold;
+}
+#banner nav ul li a {
+  font: normal normal bold 1.2em/2.2em Helvetica,Arial,sans-serif;
+  text-shadow: #CE2828 1px 1px 1px;
+  color: #3E0303;
+}
+#banner nav ul li.current a,
+#banner nav ul li a:hover {
+  color:  #fff;
+  text-shadow: #3E0303 1px 1px 1px;
+}
+
+
+
+
+#homepage #taxons {
+  background: url(../images/dogradio/homepage/taxons-bg.png);
+  width: 960px;
+  margin-bottom: 30px;
+}
+#homepage #taxons div {
+  width: 318px;
+  padding: 1px;
+  height: 309px;
+  float: left;
+  text-align: center;
+}
+#homepage #taxons h3 {
+  font-size: 1.5em;
+  margin: 20px 0 10px 0;
+}
+#homepage #taxons h3 a {
+  text-decoration: none;
+}
+
+
+#homepage #contact {
+  float: left;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding:  30px 30px 60px 30px;
+  color: #666;
+  font-family: Trebuchet MS;
+}
+
+#homepage #all-products , #homepage #contact {
+  float: left;
+}
+#homepage #all-products {
+  width: 460px;
+  margin-right: 40px;
+}
+#homepage #all-products .left, #homepage #all-products .right {
+  width: 210px;
+  float: left;
+}
+#homepage #all-products .left {
+  margin-right: 40px;
+}
+
+#homepage #contact {
+  width: 400px;
+ }
+#homepage #contact h2 {
+  color: #D72A2A;
+}
+#homepage #contact p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+#homepage #contact table {
+  width: 100%;
+}
+#homepage #contact td {
+  font-size: 1.2em;
+  padding-bottom: 10px;
+}
+
+

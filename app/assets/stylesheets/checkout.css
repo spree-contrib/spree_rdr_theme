@@ -1,0 +1,276 @@
+/* Styles for Checkout pages */
+/* ul, ol { margin-left: 2em; } */
+
+ul, ol {
+  margin-left: 0em;
+  list-style: none;
+}
+body#checkout ul.fields {
+  list-style: none;
+}
+
+input.blue {
+  color: #fff;
+  background-color: #0095da;
+}
+
+input.red {
+  color: #fff;
+  background-color: #e41e1e;
+}
+
+select {
+  padding: 7px 5px 5px;
+  color: #333;
+}
+
+input[type='text'], input[type='password'] {
+  font-size: 18px;
+  padding: 7px 5px 5px;
+  border: 2px solid #A0A0A0;
+  border-radius:2px;
+  margin-bottom: 4px;
+  color: #333;
+
+}
+
+input[type='checkbox'] {
+  vertical-align: middle;
+}
+
+label {
+  color: #747474;
+  font-size: 14px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+label.tick {
+  display: inline; 
+  vertical-align: -2px;
+}
+
+body#checkout div[role='main-content'] {
+  float:left;
+}
+
+body#checkout div[role='checkout'] {
+  vertical-align:top;
+  padding: 0 0 100px 0;
+  float: left;
+}
+
+body#checkout div[role='checkout'] div[role='title'] {
+  margin: 40px 0 20px 0;
+  letter-spacing:2px;
+  color: #d4d4d4;
+  font: 40px Arvo, Georgia, "Times New Roman", Times, serif;
+
+}
+
+body#checkout div[role='checkout'] div#tabs {
+  font: 18px Georgia, "Times New Roman", Times, serif;
+  float: left;
+  z-index: 99;
+  background-color: #fff;
+  width:660px;
+}
+
+body#checkout div[role="checkout"] div#tabs ul {
+  margin: 0;
+  font: 45px "Arvo", sans-serif;
+}
+
+body#checkout div[role='checkout'] div#tabs li {
+  display: inline;
+  float: left;
+  background-color: #eceded;
+  border-bottom: 5px solid #b7cbe9;
+  width: 130px;
+  height: 70px;
+  padding-top: 10px;
+}
+
+body#checkout div[role='checkout'] div#tabs li.active {
+  background-color: #fff;
+  border: 5px solid #b7cbe9;
+  border-bottom: none;
+}
+
+body#checkout div[role='checkout'] div#tabs li.end {
+  border-right: 3px solid #eceded;
+}
+
+body#checkout div[role='checkout'] div#tabs li span.number {
+  color: #bfbfbf;
+  font-size: 54px;
+  padding: 0 0 0 5px;
+  display: inline-block;
+  font-family: Arial;
+}
+
+body#checkout div[role='checkout'] div#tabs li.active span.number {
+  color: #324781;
+}
+
+
+body#checkout div[role='checkout'] div#tabs li span.title {
+  color: #bfbfbf;
+  font-size: 18px;
+  width: 85px;
+  padding: 0 0 0 5px;
+  display: inline-block;
+}
+
+body#checkout div[role='checkout'] div#tabs li.active span.title {
+  color: #758ed0;
+}
+
+body#checkout div[role='content'] {
+  border: 5px solid #b7cbe9;
+  font-size: 18px;
+  color: #A0A0A0;
+  width: 530px;
+  padding: 100px 60px 50px 60px;
+}
+
+body#checkout div[role='content'] h2 {
+  font: 28px Arvo;
+  color: #747474;
+  margin: 0px;
+  padding: 0px 0px 20px 0px;
+}
+
+body#checkout div[role='content'] div.submit {
+  padding-top: 20px;
+  text-align: center;
+}
+
+body#checkout div[role='content'] hr {
+  margin: 40px -30px;
+  visibility: visible;
+  border: 1px solid #D4D4D4;
+}
+
+body#checkout div[role='content'] ul.fields {
+  color: #747474;
+  margin: 0px;
+}
+
+body#checkout div[role='content'] ul.fields li {
+  padding: 0px 0 16px 0;
+  text-align: left;
+  clear: both;
+}
+
+body#checkout div[role='content'] ul.fields li.options {
+  margin: 0px 50px;
+  padding: 0px;
+}
+
+body#checkout div[role='content'] ul.fields li.options label {
+  display: inline;
+  vertical-align: -5px;
+  font: 22px Arvo;
+  margin-left: 15px;
+}
+
+
+body#checkout div[role='content'] ul.fields .quart {
+  width: 127px;
+  float: left;
+  clear: none;
+}
+
+body#checkout div[role='content'] ul.fields .half {
+  width: 254px;
+  float: left;
+  clear: none;
+}
+
+body#checkout div[role='content'] ul.fields .three-quart {
+  width: 381px;
+  float: left;
+  clear: none;
+}
+
+
+body#checkout div[role='content'] ul.fields .last {
+  margin-left: 20px;
+}
+
+
+
+body#checkout div[role='content'] ul.fields input[type='text'] {
+  width: 100%;
+}
+
+body#checkout div[role='content'] ul.fields select {
+  width: 100%;
+}
+
+body#checkout div[role='aside'] {
+  border: 3px solid #eceded;
+  width: 250px;
+  float: left;
+  margin: 100px 0px 0px 22px;
+  padding: 10px;
+  color: #7f7f7f;
+  font-size: 14px;
+}
+
+body#checkout div[role='aside'] h3 {
+  color: #0095da;
+  font: 24px Arvo;
+  margin: 10px 5px 10px 15px;
+  padding: 0 0 10px 0;
+}
+
+body#checkout div[role='aside'] div[role='order'] table td {
+  padding-right: 10px;
+}
+
+body#checkout div[role='aside'] div[role='order'] table.total {
+  margin-top:20px;
+  width: 100%;
+  text-align: right;
+}
+
+body#checkout div[role='aside'] div[role='order'] th {
+  font-weight: normal;
+}
+
+body#checkout div[role='aside'] div[role='order'] table.items td {
+  padding-bottom: 10px;
+}
+
+body#checkout div[role='aside'] div[role='order'] table.total td {
+  padding-bottom: 5px;
+}
+
+
+body#checkout div[role='aside'] div[role='order'] tr.total th, div[role='aside'] div[role='order'] tr.total td {
+  font-weight: bold;
+}
+
+
+body#checkout div[role='aside'] div[role='order'] tr td.qty {
+  width: 36px;
+}
+
+body#checkout div[role='aside'] div[role='order'] tr td.description {
+  width: 160px;
+}
+
+
+body#checkout div[role='aside'] div[role='order'] tr td.price {
+  width: 36px;
+}
+
+body#checkout .hidden{
+  display: none;
+  visibility: visible;
+}
+
+/* End Styles for Checkout page */
+

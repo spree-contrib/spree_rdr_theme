@@ -1,0 +1,31 @@
+body#login #social_login {
+  float: left;
+  width: 46%;
+  padding: 0px 2%;
+}
+
+body#login #local_login {
+  float: left;
+  width: 46%;
+  padding: 0px 2%;
+}
+
+#social_login p.social_link{
+  margin: 20px 25%; 
+}
+
+body#login form {
+  width: 70%;
+}
+
+body#login #local_login input[type='text'] {
+  width: 100%
+}
+
+body#login #local_login input[type='password'] {
+  width: 100%
+}
+
+body#login #local_login button {
+  margin: 0 33%;
+}

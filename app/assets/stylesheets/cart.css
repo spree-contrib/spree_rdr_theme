@@ -1,0 +1,141 @@
+body#cart h1 {
+  border-bottom: 1px solid #D9D9D9;
+}
+
+table#cart-detail {
+  width: 100%;
+}
+
+table#cart-detail th {
+  color: #777;
+  font-weight: normal;
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+table#cart-detail th, table#cart-detail td {
+  border-bottom: 1px solid #D9D9D9;
+}
+
+table#cart-detail td {
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+table#cart-detail tr.totals td, table#cart-detail tr.actions td {
+  padding: 20px 0;
+}
+
+table#cart-detail tr.totals td, table#cart-detail td.actions {
+  text-align: right;
+}
+
+table#cart-detail td.image {
+  width: 180px;
+}
+table#cart-detail td.normal {
+  font-weight: normal;
+  vertical-align: middle;
+}
+table#cart-detail td.normal img {
+  vertical-align: sub;
+
+}
+
+
+table#cart-detail td.image img {
+  vertical-align: middle;
+}
+
+table#cart-detail td.description {
+  width: 250px;
+  padding-right: 50px;
+}
+
+table#cart-detail td.quantity {
+  width: 75px;
+  padding: 0;
+}
+
+table#cart-detail td.quantity input {
+  margin: 0!important;
+  width: 75px;
+  border: 1px solid #949494;
+  padding: 4px;
+}
+
+table#cart-detail td.unit-price, table#cart-detail td.total {
+  width: 60px;
+}
+
+table#cart-detail td.actions {
+  width: 130px;
+}
+
+table#cart-detail td.operator {
+  color: #999;
+  font-weight: normal;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+table#cart-detail a.delete {
+  background-color: #333;
+}
+
+table#cart-detail .actions {
+  margin: 20px 0px;
+}
+
+table#cart-detail .actions div {
+  float: left;
+  margin: 10px;
+}
+
+table#cart-detail .move_item form{
+  display:none;
+  margin: 2px 8px;
+}
+
+body#cart a.checkout {
+  background-color: #E41E1E;
+}
+
+body#cart p.actions {
+  text-align: right;
+  font-size: 1.20em;
+}
+
+body#cart p.actions, body#cart p.actions a {
+  color: #999;
+  margin-bottom: 40px;
+}
+
+#edit_wishlist {
+  padding: 0px 140px 10px;
+  display: none;
+  border-bottom: 1px solid #D9D9D9;
+  margin-bottom: 20px;
+}
+#edit_wishlist label{
+  color: #777777;
+}
+#edit_wishlist input[type='text'] {
+  border: 2px solid #A0A0A0;
+  border-radius:2px;
+  margin-bottom: 4px;
+}
+#edit_wishlist input[type="checkbox"] {
+  vertical-align: baseline;
+}
+#edit_wishlist div {
+  float: left;
+}
+#edit_wishlist a.button{
+  float: left;
+  line-height: 15px;
+  margin: 25px 110px;
+}
