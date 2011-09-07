@@ -4,7 +4,7 @@ Deface::Override.new(:virtual_path => %q{checkout/payment/_gateway},
                           :text => %q{<li class="payment_method <%= payment_method.id %>" style="display:<%= checked == payment_method.id ? "block" : "none" %>;">
   <h2>Your Credit Card Information</h2>
   <% ['mastercard', 'visa', 'american-express', 'discover'].each do |card| %>
-    <%= image_tag "icons/#{card}-curved-32px.png", :alt => card.capitalize %>
+    <%= image_tag "store/icons/#{card}-curved-32px.png", :alt => card.capitalize %>
   <% end %>
 </li>
 

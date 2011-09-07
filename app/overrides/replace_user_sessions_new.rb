@@ -1,13 +1,18 @@
 Deface::Override.new(:virtual_path => %q{user_sessions/new},
                           :name => %q{replace_user_sessions_new},
                           :replace => %q{#existing-customer},
-                          :text => %q{<div id="existing-customer" style="margin:50px 4% 0 0;width:48%;float:left;">
+                          :text => %q{<%= render 'shared/social_users' %>
+<div id="local_login">
+
+  <div id="existing-customer">
     <h2>Existing Customers</h2>
     <p>If you've already registered for an account you can sign in here:</p>
     <%= render :partial => 'shared/login' %>
   </div>
 
-  <div id="new_customers" style="margin:50px 0 0 0;width:48%;float:left;"">
+  <hr/>
+
+  <div id="new_customers">
     <h2>New Customers</h2>
     <p>You can register for a new account here on RailsDog Radio below:</p>
     <%= form_for(:user, :url => registration_path(User.new)) do |f| %>
@@ -27,4 +32,5 @@ Deface::Override.new(:virtual_path => %q{user_sessions/new},
 
 
   </div>
+</div>
 })

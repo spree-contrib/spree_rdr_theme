@@ -5,7 +5,7 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
                           :text => %q{<body id="<%= (@body_id == 'signup' ? 'checkout' : @body_id) || controller.controller_name %>">
     <div id="container">
         <header>
-          <%= link_to image_tag("/assets/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
+          <%= link_to image_tag("store/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
           <form action="#" >
           </form>
           <%= form_tag products_url, :method => :get do %>
@@ -48,9 +48,9 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
         
     </div>
     
-    <footer>
+    <footer data-hook="footer">
       <div class="inner">
-        <img src="/assets/kid.jpg" width="204" height="413" alt="Kid" id="kid">
+        <%= image_tag "store/kid.jpg", :width => "204", :height => "413", :alt => "RailsDog Radio Kid", :id => "kid" %>
     
         <div id="about-railsdog-radio">
           <div>
@@ -92,7 +92,4 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
     
       </div>
     </footer>
-</body>},
-                          :disabled => false,
-                          :sequence => 100)
-
+</body>})

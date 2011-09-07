@@ -1,0 +1,22 @@
+<div id="all-products" class="list-box">
+  <% if @taxon.present? && @taxon.children.present? %>
+    <h2>More Products</h2>
+    <ul>
+      <% @taxon.children.each_with_index do |taxon,i| %>
+        <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h2>All Products</h2>
+    <ul>
+      <% Taxonomy.where(:name => "Categories").first.root.children.each_with_index do |taxon,i| %>
+        <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<% if Rails.application.railties.all.map(&:railtie_name).include? "spree_recently_viewed" %>
+  <div id="recent-products" class="list-box">
+    <%= render "shared/recently_viewed_products" %>
+  </div>
+<% end %>

@@ -1,10 +1,10 @@
 /* @override http://localhost:3000/stylesheets/screen.css */
 body#product_list {
-  background: #fff url(/assets/bg.png) repeat-x;
+  background: #fff url(<%= asset_path 'store/bg.png' %>) repeat-x;
 }
 
 body {
-  background: #fff url(/assets/narrow_bg.png) repeat-x;
+  background: #fff url(<%= asset_path 'store/narrow_bg.png' %>) repeat-x;
 }
 
 #banner, #container, footer .inner {width: 960px; margin: 0 auto;}
@@ -25,7 +25,7 @@ header form {
   padding: 0;
 }
 header form input {
-  background: #fff url(/assets/search_bg_s1.gif) no-repeat;
+  background: #fff url(<%= asset_path 'store/search_bg_s1.gif' %>) no-repeat;
   border: 0;
   width: 146px;
   height: 23px;
@@ -61,7 +61,7 @@ header nav a, header nav a:visited,header nav a:hover {
 header nav a.cart {color: #B30000;}
 
 footer {
-  background: #fff url('/assets/footer_bkgd.jpg') repeat-x bottom left;
+  background: #fff url(<%= asset_path 'store/footer_bkgd.jpg' %>) repeat-x bottom left;
   margin: 80px 0 0; clear: both;
   font-family: Trebuchet MS;
 }
@@ -127,10 +127,10 @@ footer #social a {
   float: left;
   margin-right: 10px;
   background-repeat: no-repeat;
-  background-image: url(/assets/social-icons.png);
+  background-image: url(<%= asset_path 'store/social-icons.png' %>);
 }
 footer #social a:hover {
-  background-image: url(/assets/social-icons-rollover.png);
+  background-image: url(<%= asset_path 'store/social-icons-rollover.png' %>);
 }
 footer #social a span    { display: none; }
 footer #social #rss      { background-position: -37px 0   }

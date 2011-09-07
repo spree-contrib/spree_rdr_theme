@@ -5,10 +5,10 @@ Deface::Override.new(:virtual_path => %q{products/show},
                           :text => %q{<div data-hook="product_show">
   <% @body_id = 'product-details' %>
 
-  <div role="banner" id="banner">
-    <h1>Products</h1>
-      <img src="/assets/satellite-radios-bg.jpg" alt="Satellite-radios-bg">
-    </div>
+    <%= content_for :banner do %>
+      <h1>Products</h1>
+      <%= image_tag "store/satellite-radios-bg.jpg", :alt => "Satellite Radios" %>
+    <% end %>
 
     <h2><%= @product.name %></h2>
     <div id="product-images" data-hook>
@@ -20,7 +20,7 @@ Deface::Override.new(:virtual_path => %q{products/show},
       </div>
       <br><br>
     </div>
-    
+
     <div id="cart-form"  data-hook="cart_form">
       <%= form_for :order, :url => populate_orders_url do |f| %>
         <div data-hook="inside_product_cart_form" %>
@@ -31,7 +31,7 @@ Deface::Override.new(:virtual_path => %q{products/show},
               <dt>PART NUMBER</dt>
               <dd><%= @product.sku %></dd>
             </dl>
-          
+
             <dl class="prices clearfix">
               <dt>Price</dt>
               <dd><span class="price discounted"><%= number_to_currency (@product.price * 1.2) %></span></dd>
@@ -46,7 +46,7 @@ Deface::Override.new(:virtual_path => %q{products/show},
               <dt>In Stock</dt>
               <dd><span class="stock"><%= @product.has_stock? ? "YES" : "NO" %></span></dd>
             </dl>
-            
+ 
             <hr />
           <% end %>
 
@@ -55,7 +55,7 @@ Deface::Override.new(:virtual_path => %q{products/show},
       </div>
     </div>
 
-    <div id="product-description">
+    <div id="product-description" data-hook="product_description">
         <%= product_description(@product) rescue t("product_has_no_description") %>
     </div>
 </div>},

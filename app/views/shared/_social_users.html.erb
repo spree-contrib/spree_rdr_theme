@@ -1,0 +1,11 @@
+<% if !current_user || !current_user.user_authentications %>
+  <div id="social_login">
+    <h2>Sign In Using</h2>
+    <p>If you have an existing account with any of the following sites you can login here by clicking on the icon below.</p>
+    <% AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
+      <p class="social_link">
+        <%= link_to(image_tag("store/icons/#{user.preferred_provider}.png", :alt => "#{user.preferred_provider}"), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym), :title => "Sign in with #{user.preferred_provider}") if user.active %>
+      </p>
+    <% end %>
+  </div>
+<% end %>

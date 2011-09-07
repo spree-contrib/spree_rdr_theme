@@ -1,0 +1,86 @@
+<% @body_id = 'cart' %>
+
+<h1>Wish List - <%= @wishlist.name %><%= link_to "(edit)", "#", :id => "edit_wishlist_link" %></h1>
+
+<div id="edit_wishlist">
+  <% if @wishlist.user == current_user %>
+    <%= form_for @wishlist do |f| %>
+      <div>
+        <p><%= f.label :name, t(:name), :class => "inline" %>:&nbsp;<%= f.text_field :name %></p>
+        <p><%= f.check_box :is_private %>&nbsp;<%= f.label :is_private, "Keep this list private, for my eyes only!", :class => "inline" %></p>
+        <p><%= f.check_box :is_default %>&nbsp;<%= f.label :is_default, "Automatically add new wished items to this list.", :class => "inline" %></p>
+      </div>
+      <%= link_to "Update", '#', :onclick => "$(this).parent().submit(); return false;", :class => 'button' %>
+    <% end %>
+    <hr/>
+  <% end %>
+</div>
+
+<h3>You have <%= pluralize @wishlist.wished_products.size, 'item' %> in your wish list.</h3>
+
+<% if @wishlist.wished_products.size > 0 %>
+  <table id="cart-detail">
+    <thead>
+      <tr>
+        <th colspan="2">Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <% @wishlist.wished_products.each do |wish|
+      variant = wish.variant
+      product = variant.product %>
+
+      <tr class="<%= cycle('', 'alt') %>">
+        <td class="image">
+          <% if variant.images.length == 0 %>
+            <%= small_image(variant.product) %>
+          <% else %>
+            <%=  image_tag variant.images.first.attachment.url(:small)   %>
+          <% end %>
+        </td>
+        <td class="">
+          <h4><%= link_to variant.product.name,  product_path(variant.product) %></h4>
+          <%= variant_options variant %>
+          <div class="actions">
+            <div class="add_item_to_cart">
+              <%= form_for :order, :url => populate_orders_url do |f| %>
+                <%= hidden_field_tag "variants[#{variant.id}]", 1, :size => 3 %>
+                <%= link_to t(:add_to_cart), '#', :onclick => "$(this).parent().submit(); return false;", :class => 'button' %>
+              <% end %>
+            </div>
+            <div class="remove_item">
+              <%= link_to "Remove", wish, :method => :delete, :class => 'delete button' %>
+            </div>
+
+            <% if current_user.wishlists.count > 1 %>
+              <div class="move_item">
+                <%= link_to "Move", '#', :class => 'button' %>
+
+                <%= form_for wish do |f| %>
+                  <label class="inline">Move to:</label>
+                  <%= f.select :wishlist_id, current_user.wishlists.map{|wl| [wl.name, wl.id] unless wl.id == @wishlist.id}.compact %>
+                  <%= f.submit "Confirm" %>
+                <% end %>
+              </div>
+            <% end %>
+
+          </div>
+        </td>
+        <td class="unit-price">
+          <%= product_price(product) %>
+        </td>
+      </tr>
+    <% end -%>
+  </table>
+<% end -%>
+
+<p class="actions">
+  <% if @wishlist.user == current_user %>
+    <%= link_to "Create New List", new_wishlist_path, :class => 'button' %> &nbsp;
+    <%= link_to "Delete This List", @wishlist, :method => :delete, :confirm => 'Are you sure, that you want to delete this wishlist?', :class => 'button checkout' %>
+  <% end -%>
+</p>
+
+<% if @wishlists.present? %>
+  <h3>My Wishlists: <%= raw @wishlists.map { |wl| link_to(wl.name, wl) }.join(", ") %></h3>
+<% end %>

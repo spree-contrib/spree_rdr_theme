@@ -1,7 +1,9 @@
 Deface::Override.new(:virtual_path => %q{users/show},
                           :name => %q{replace_account_my_orders},
                           :replace => %q{[data-hook='account_my_orders']},
-                          :text => %q{<h3><%= t("my_orders") %></h3>
+                          :sequence => {:after => 'remove_account_summary' },
+                          :text => %q{<div data-hook="account_my_orders">
+<h3><%= t("my_orders") %></h3>
 <% if @orders.present? %>
   <table id="cart-detail">
     <thead>
@@ -28,6 +30,7 @@ Deface::Override.new(:virtual_path => %q{users/show},
 <% else %>
   <p><%= t(:you_have_no_orders_yet) %></p>
 <% end %>
-
+</div>
+<div data-hook="account_summary"></div>
 
 })
