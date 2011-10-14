@@ -1,7 +1,10 @@
 Deface::Override.new(:virtual_path => %q{user_sessions/new},
                           :name => %q{replace_user_sessions_new},
                           :replace => %q{#existing-customer},
-                          :text => %q{<%= render 'shared/social_users' %>
+                          :text => %q{
+<% if Rails.application.railties.all.map(&:railtie_name).include? "spree_social" %>
+<%= render 'shared/social_users' %>
+<% end %>
 <div id="local_login">
 
   <div id="existing-customer">
