@@ -4,7 +4,7 @@ Deface::Override.new(:virtual_path => %q{spree/shared/_products},
                           :closing_selector => %q{},
                           :text => %q{<% @body_id = 'product-list' %>
 
-<%= render 'shared/product_banner' %>
+<%= render 'spree/shared/product_banner' %>
 
 <div class="list" id="products" data-hook>
 <% products.each do |product| %>

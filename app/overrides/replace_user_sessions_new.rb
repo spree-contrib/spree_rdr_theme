@@ -18,7 +18,7 @@ Deface::Override.new(:virtual_path => %q{spree/user_sessions/new},
   <div id="new_customers">
     <h2>New Customers</h2>
     <p>You can register for a new account here on RailsDog Radio below:</p>
-    <%= form_for(:user, :url => registration_path(User.new)) do |f| %>
+    <%= form_for(:user, :url => spree.user_registration_path(Spree::User.new)) do |f| %>
 
         <% if session[:omniauth] %>
           <p>
