@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{shared/_products},
+Deface::Override.new(:virtual_path => %q{spree/shared/_products},
                           :name => %q{replace_products},
                           :replace => %q{#products[data-hook]},
                           :closing_selector => %q{},

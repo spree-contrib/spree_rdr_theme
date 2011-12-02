@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{checkout/_confirm},
+Deface::Override.new(:virtual_path => %q{spree/checkout/_confirm},
                           :name => %q{replace_confirm},
                           :replace => %q{#order_details[data-hook]},
                           :text => %q{<div id="content" role="content">

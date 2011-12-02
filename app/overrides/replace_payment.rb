@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{checkout/_payment},
+Deface::Override.new(:virtual_path => %q{spree/checkout/_payment},
                           :name => %q{replace_payment},
                           :replace => %q{#payment[data-hook]},
                           :text => %q{<div id="content" role="content">

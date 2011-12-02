@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{checkout/payment/_gateway},
+Deface::Override.new(:virtual_path => %q{spree/checkout/payment/_gateway},
                           :name => %q{replace_gateway_fields},
                           :replace => %q{[data-hook='card_number']},
                           :text => %q{<li class="payment_method <%= payment_method.id %>" style="display:<%= checked == payment_method.id ? "block" : "none" %>;">

@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{layouts/spree_application},
+Deface::Override.new(:virtual_path => %q{spree/layouts/spree_application},
                           :name => %q{replace_body},
                           :replace => %q{[data-hook='body']},
                           :closing_selector => %q{},
@@ -22,13 +22,13 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
             <%= link_to_cart %>
           </nav>
         </header>
-        
+
         <% if content_for?(:banner) %>
           <div id="banner" role="banner">
             <%= yield :banner %>
           </div>
         <% end %>
-        
+
         <div id="main" role="main">
           <% if flash.notice %>
             <div class="flash notice"><%= flash.notice %></div>
@@ -36,22 +36,22 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
           <% if flash[:error] %>
             <div class="flash errors"><%= flash[:error] %></div>
           <% end %>
-        
+
           <%= yield %>
         </div>
-        
+
         <% if content_for?(:sidebar) %>
           <div id="sidebar" role="sidebar">
             <%= yield :sidebar %>
           </div>
         <% end %>
-        
+
     </div>
-    
+
     <footer data-hook="footer">
       <div class="inner">
         <%= image_tag "store/kid.jpg", :width => "204", :height => "413", :alt => "RailsDog Radio Kid", :id => "kid" %>
-    
+
         <div id="about-railsdog-radio">
           <div>
             <p>
@@ -62,7 +62,7 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
             </p>
           </div>
         </div>
-    
+
         <div id="contact-us">
           <h3>Contact Us</h3>
           <p>
@@ -70,7 +70,7 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
           <a href="mailto:sales@railsdogradio.com">sales@railsdogradio.com</a>
           </p>
         </div>
-    
+
         <div id="social">
           <h3>Social</h3>
           <p>
@@ -79,7 +79,7 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
           <a href="http://twitter.com/spreecommerce" id="twitter"><span>Twitter</span></a>
           </p>
         </div>
-    
+
         <div id="menu">
           <h3>Menu</h3>
           <p>
@@ -87,9 +87,9 @@ Deface::Override.new(:virtual_path => %q{layouts/spree_application},
           <a href="/privacy">Privacy policy</a>
           </p>
         </div>
-    
+
         <p id="copyright">&copy; Copyright <%= Time.zone.now.year %> Railsdog Radio. All rights reserved</p>
-    
+
       </div>
     </footer>
 </body>})

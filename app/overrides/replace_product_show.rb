@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{products/show},
+Deface::Override.new(:virtual_path => %q{spree/products/show},
                           :name => %q{replace_product_show},
                           :replace => %q{[data-hook='product_show']},
                           :closing_selector => %q{},
@@ -46,7 +46,7 @@ Deface::Override.new(:virtual_path => %q{products/show},
               <dt>In Stock</dt>
               <dd><span class="stock"><%= @product.has_stock? ? "YES" : "NO" %></span></dd>
             </dl>
- 
+
             <hr />
           <% end %>
 

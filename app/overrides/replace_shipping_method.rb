@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{checkout/_delivery},
+Deface::Override.new(:virtual_path => %q{spree/checkout/_delivery},
                           :name => %q{replace_shipping_method},
                           :replace => %q{#shipping_method[data-hook]},
                           :text => %q{<div id="content" role="content">

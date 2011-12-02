@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{checkout/edit},
+Deface::Override.new(:virtual_path => %q{spree/checkout/edit},
                           :name => %q{replace_checkout},
                           :replace => %q{#checkout[data-hook]},
                           :closing_selector => %q{},
@@ -6,7 +6,7 @@ Deface::Override.new(:virtual_path => %q{checkout/edit},
   <div id="title" role="title">CHECKOUT</div>
   <!-- START MAIN CONTENT -->
   <div id="main-content" role="main-content">
-    <%= render "shared/error_messages", :target => @order %>
+    <%= render "spree/shared/error_messages", :target => @order %>
     <div id="tabs" role="tabs">
       <ul>
         <li><span class="number">1</span><span class="title">Create an Account</span></li>

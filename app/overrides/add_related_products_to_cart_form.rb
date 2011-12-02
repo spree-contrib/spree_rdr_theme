@@ -1,6 +1,6 @@
 if Rails.application.railties.all.map(&:railtie_name).include? "spree_related_products"
 
-  Deface::Override.new(:virtual_path => %q{products/show},
+  Deface::Override.new(:virtual_path => %q{spree/products/show},
                        :name => %q{add_related_products_to_cart_form},
                        :replace => %q{[data-hook='cart_form'] hr},
                        :sequence => {:after => "replace_cart_form" },

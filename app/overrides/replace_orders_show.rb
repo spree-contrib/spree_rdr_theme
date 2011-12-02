@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{orders/show},
+Deface::Override.new(:virtual_path => %q{spree/orders/show},
                           :name => %q{replace_orders_show},
                           :replace => %q{#order[data-hook]},
                           :text => %q{<% @body_id = 'cart' %>

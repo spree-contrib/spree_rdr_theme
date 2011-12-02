@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{orders/edit},
+Deface::Override.new(:virtual_path => %q{spree/orders/edit},
                           :name => %q{replace_outside_cart_form},
                           :replace => %q{[data-hook='outside_cart_form']},
                           :closing_selector => %q{},

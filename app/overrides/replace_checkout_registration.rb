@@ -1,11 +1,11 @@
-Deface::Override.new(:virtual_path => %q{checkout/registration},
+Deface::Override.new(:virtual_path => %q{spree/checkout/registration},
                           :name => %q{replace_checkout_registration},
                           :replace => %q{#registration},
                           :text => %q{<div id="checkout" role="checkout" class="clearfix">
   <div id="title" role="title">CHECKOUT</div>
   <!-- START MAIN CONTENT -->
   <div id="main-content" role="main-content">
-    <%= render "shared/error_messages", :target => @order %>
+    <%= render "spree/shared/error_messages", :target => @order %>
     <div id="tabs" role="tabs">
       <ul>
         <li class='active'><span class="number">1</span><span class="title">Create an Account</span></li>

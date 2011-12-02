@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{orders/_line_item},
+Deface::Override.new(:virtual_path => %q{spree/orders/_line_item},
                           :name => %q{replace_line_item},
                           :replace => %q{tr},
                           :text => %q{<tr class="<%= cycle('', 'alt') %>">
