@@ -33,7 +33,7 @@ Deface::Override.new(:virtual_path => %q{spree/orders/show},
             <%= variant_options variant %>
           </td>
           <td class="unit-price">
-            <%=  product_price(line_item) %>
+            <%=  number_to_currency(line_item.price) %>
           </td>
           <td class="operator">
             X
@@ -45,14 +45,14 @@ Deface::Override.new(:virtual_path => %q{spree/orders/show},
             =
           </td>
           <td class="total">
-            <%= format_price(product_price(line_item, :format_as_currency => false) * line_item.quantity) unless line_item.quantity.nil? %>
+            <%= format_price(line_item.price * line_item.quantity) unless line_item.quantity.nil? %>
           </td>
         </tr>
       <% end %>
       <tr class="totals">
         <td colspan="6">Item Subtotal</td>
         <td class="totals">
-          <%= order_price(@order) %>
+          <%= number_to_currency @order.item_total %>
         </td>
       </tr>
       <% @order.adjustments.each do |adjustment| %>
