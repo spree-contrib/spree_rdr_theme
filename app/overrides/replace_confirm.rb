@@ -47,7 +47,7 @@ Deface::Override.new(:virtual_path => %q{spree/checkout/_confirm},
       <h2>Payment Details</h2>
       <h4><%= @order.payment.payment_method.name %></h4>
 
-      <% if @order.payment.payment_method.class.to_s == "BillingIntegration::PaypalExpress" %>
+      <% if @order.payment.payment_method.class.to_s == "Spree::BillingIntegration::PaypalExpress" %>
         <p>You will be redirected to PayPal to complete your order.</p>
       <% else %>
         <%= @order.payment.source.name %><br />
@@ -60,7 +60,7 @@ Deface::Override.new(:virtual_path => %q{spree/checkout/_confirm},
 
   </div>
   <div class="submit">
-    <% if @order.payment.payment_method.class.to_s == "BillingIntegration::PaypalExpress" %>
+    <% if @order.payment.payment_method.class.to_s == "Spree::BillingIntegration::PaypalExpress" %>
       <button class="blue" type="submit">Go To PayPal</button>
     <% else %>
       <button class="blue" type="submit">Place your order</button>
