@@ -36,7 +36,7 @@ Deface::Override.new(:virtual_path => %q{spree/products/show},
               <dt>Price</dt>
               <dd><span class="price discounted"><%= number_to_currency (@product.price * 1.2) %></span></dd>
               <dt>Sale Price</dt>
-              <dd><span class="price selling"><%= product_price(@product) %></span></dd>
+              <dd><span class="price selling"><%= number_to_currency(@product.price) %></span></dd>
             </dl>
             <dl class="shipping">
               <dt>Shipping</dt>
