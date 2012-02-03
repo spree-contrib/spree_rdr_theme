@@ -24,7 +24,9 @@ select {
   color: #333;
 }
 
-input[type='text'], input[type='password'] {
+input[type='text'], input[type='password'],
+input[type="email"], input[type="url"],
+input[type="phone"] {
   font-size: 18px;
   padding: 7px 5px 5px;
   border: 2px solid #A0A0A0;

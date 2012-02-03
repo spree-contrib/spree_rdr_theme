@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{orders/_line_item},
+Deface::Override.new(:virtual_path => %q{spree/orders/_line_item},
                           :name => %q{replace_line_item},
                           :replace => %q{tr},
                           :text => %q{<tr class="<%= cycle('', 'alt') %>">
@@ -14,7 +14,7 @@ Deface::Override.new(:virtual_path => %q{orders/_line_item},
     <%= variant_options variant %>
   </td>
   <td class="unit-price" data-hook="cart_item_price">
-    <%= product_price(line_item) %>
+    <%= number_to_currency(line_item.price) %>
   </td>
   <td class="operator">
     X
@@ -26,7 +26,7 @@ Deface::Override.new(:virtual_path => %q{orders/_line_item},
     =
   </td>
   <td class="total" data-hook="cart_item_total">
-    <%= format_price(product_price(line_item, :format_as_currency => false) * line_item.quantity) unless line_item.quantity.nil? %>
+    <%= number_to_currency(line_item.price * line_item.quantity) unless line_item.quantity.nil? %>
   </td>
   <td class="total" data-hook="cart_item_delete">
     <%= link_to("Remove", '#', :class => 'delete button') %>

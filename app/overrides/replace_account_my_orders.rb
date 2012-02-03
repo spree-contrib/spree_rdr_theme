@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{users/show},
+Deface::Override.new(:virtual_path => %q{spree/users/show},
                           :name => %q{replace_account_my_orders},
                           :replace => %q{[data-hook='account_my_orders']},
                           :sequence => {:after => 'remove_account_summary' },

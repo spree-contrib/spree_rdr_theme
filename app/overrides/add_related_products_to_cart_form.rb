@@ -1,6 +1,6 @@
 if Rails.application.railties.all.map(&:railtie_name).include? "spree_related_products"
 
-  Deface::Override.new(:virtual_path => %q{products/show},
+  Deface::Override.new(:virtual_path => %q{spree/products/show},
                        :name => %q{add_related_products_to_cart_form},
                        :replace => %q{[data-hook='cart_form'] hr},
                        :sequence => {:after => "replace_cart_form" },
@@ -10,7 +10,7 @@ if Rails.application.railties.all.map(&:railtie_name).include? "spree_related_pr
     <p>
       <%= check_box_tag "variants[#{cross_sell.master.id}]", 1 %>
       <label for="">
-        Add <em>'<%= link_to cross_sell.name, product_url(cross_sell) %>'</em> for <%= product_price(cross_sell) %>
+        Add <em>'<%= link_to cross_sell.name, product_url(cross_sell) %>'</em> for <%=number_to_currency(cross_sell.price) %>
       </label>
     </p>
     <% end %>

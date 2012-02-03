@@ -1,6 +1,6 @@
 if Rails.application.railties.all.map(&:railtie_name).include? "spree_wishlist"
 
-  Deface::Override.new(:virtual_path => "users/show",
+  Deface::Override.new(:virtual_path => "spree/users/show",
                        :name => "add_wishlists_to_account_my_orders",
                        :text => %q{<h3>
   My Wishlists:

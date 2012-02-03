@@ -1,10 +1,9 @@
-Deface::Override.new(:virtual_path => %q{checkout/_address},
+Deface::Override.new(:virtual_path => %q{spree/checkout/_address},
                           :name => %q{replace_billing},
                           :replace => %q{#billing[data-hook]},
                           :text => %q{<% content_for :javascripts do %>
   <%= javascript_include_tag 'checkout', '/states' %>
 <% end %>
-
 <div id="content" role="content">
   <h2>Your Billing Information</h2>
   <%= form.fields_for :bill_address do |bill_form| %>
@@ -136,7 +135,7 @@ Deface::Override.new(:virtual_path => %q{checkout/_address},
         <li>
           <%= ship_form.label :country_id, "Country" %>
           <span id="scountry">
-            <%= ship_form.collection_select :country_id, Country.all, :id, :name %>
+            <%= ship_form.collection_select :country_id, Spree::Country.all, :id, :name %>
           </span>
         </li>
         <li>

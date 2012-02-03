@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{orders/_form},
+Deface::Override.new(:virtual_path => %q{spree/orders/_form},
                           :name => %q{replace_cart_detail},
                           :replace => %q{#cart-detail[data-hook]},
                           :text => %q{<table id="cart-detail" data-hook>
@@ -27,7 +27,7 @@ Deface::Override.new(:virtual_path => %q{orders/_form},
     <tr class="totals">
       <td colspan="6">&nbsp;</td>
       <td colspan="2" class="totals">
-        <%= "#{t("subtotal")}: #{order_price(@order)}" %>
+        <%= t(:subtotal) %>: <span class="order-total"><%= order_subtotal(@order) %></span>
       </td>
     </tr>
   </tbody>

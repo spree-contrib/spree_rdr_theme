@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{checkout/_payment},
+Deface::Override.new(:virtual_path => %q{spree/checkout/_payment},
                           :name => %q{replace_payment},
                           :replace => %q{#payment[data-hook]},
                           :text => %q{<div id="content" role="content">
@@ -13,7 +13,7 @@ Deface::Override.new(:virtual_path => %q{checkout/_payment},
 
     <hr />
     <% @order.available_payment_methods.each_with_index do |method, i| %>
-      <%= render "checkout/payment/#{method.method_type}", :payment_method => method, :checked => (@order.try(:payment).try(:payment_method_id) || method.id if i == 0)  %>
+      <%= render "spree/checkout/payment/#{method.method_type}", :payment_method => method, :checked => (@order.try(:payment).try(:payment_method_id) || method.id if i == 0)  %>
     <% end %>
   </ul>
   <br>

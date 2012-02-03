@@ -1,6 +1,6 @@
 if Rails.application.railties.all.map(&:railtie_name).include? "spree_social"
 
-  Deface::Override.new(:virtual_path => "users/show",
+  Deface::Override.new(:virtual_path => "spree/users/show",
                        :name => "replace_account_summary_with_social_logins",
                        :replace => "[data-hook='account_summary']",
                        :sequence => {:after => 'replace_account_my_orders'},

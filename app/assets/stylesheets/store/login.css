@@ -26,6 +26,6 @@ body#login #local_login input[type='password'] {
   width: 100%
 }
 
-body#login #local_login button {
+body#login #local_login .button {
   margin: 0 33%;
 }

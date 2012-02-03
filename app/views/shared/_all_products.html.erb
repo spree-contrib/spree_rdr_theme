@@ -9,7 +9,7 @@
   <% else %>
     <h2>All Products</h2>
     <ul>
-      <% Taxonomy.where(:name => "Categories").first.root.children.each_with_index do |taxon,i| %>
+      <% Spree::Taxonomy.where(:name => "Categories").first.root.children.each_with_index do |taxon,i| %>
         <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
       <% end %>
     </ul>
@@ -17,6 +17,6 @@
 </div>
 <% if Rails.application.railties.all.map(&:railtie_name).include? "spree_recently_viewed" %>
   <div id="recent-products" class="list-box">
-    <%= render "shared/recently_viewed_products" %>
+    <%= render "spree/shared/recently_viewed_products" %>
   </div>
 <% end %>

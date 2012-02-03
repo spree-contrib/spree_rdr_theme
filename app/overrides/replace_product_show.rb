@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{products/show},
+Deface::Override.new(:virtual_path => %q{spree/products/show},
                           :name => %q{replace_product_show},
                           :replace => %q{[data-hook='product_show']},
                           :closing_selector => %q{},
@@ -36,7 +36,7 @@ Deface::Override.new(:virtual_path => %q{products/show},
               <dt>Price</dt>
               <dd><span class="price discounted"><%= number_to_currency (@product.price * 1.2) %></span></dd>
               <dt>Sale Price</dt>
-              <dd><span class="price selling"><%= product_price(@product) %></span></dd>
+              <dd><span class="price selling"><%= number_to_currency (@product.price) %></span></dd>
             </dl>
             <dl class="shipping">
               <dt>Shipping</dt>
@@ -48,6 +48,33 @@ Deface::Override.new(:virtual_path => %q{products/show},
             </dl>
  
             <hr />
+
+            <% if @product.has_variants? %>
+              <div id="product-variants" class="columns five alpha">
+                <h3 class="product-section-title"><%= t(:variants) %></h3>
+                <ul>
+                  <% has_checked = false
+                  @product.variants.active.each_with_index do |v,index|
+                    next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
+                    checked = !has_checked && (v.in_stock || Spree::Config[:allow_backorders])
+                    has_checked = true if checked %>
+                    <li>
+                      <%= radio_button_tag "products[#{@product.id}]", v.id, checked, :disabled => !v.in_stock && !Spree::Config[:allow_backorders] %>
+                      <label for="<%= ['products', @product.id, v.id].join('_') %>">
+                        <span class="variant-description">
+                          <%= variant_options v %>
+                        </span>
+                        <% if variant_price_diff v %>
+                          <span class="price diff"><%= variant_price_diff v %></span>
+                        <% end %>
+                      </label>
+                    </li>
+                  <% end%>
+                </ul>
+              </div>
+            <% end%>
+
+
           <% end %>
 
           <p><button type="submit">Add to cart</button></p>

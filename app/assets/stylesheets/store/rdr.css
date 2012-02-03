@@ -2,7 +2,7 @@
  *= require store/reset
  *= require store/typography
  *= require store/misc
- *= require store/screen
+ *= require store/display
  *= require store/taxonomy
  *= require store/products
  *= require store/cart

@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => %q{shared/_login},
+Deface::Override.new(:virtual_path => %q{spree/shared/_login},
                      :name => %q{tweak_remember_me_login},
                      :replace => %q{p label},
                      :text => %q{<%= f.check_box :remember_me %>

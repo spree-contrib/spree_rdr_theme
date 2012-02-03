@@ -1,4 +1,4 @@
-Deface::Override.new(:virtual_path => 'wishlists/new',
+Deface::Override.new(:virtual_path => 'spree/wishlists/new',
                      :name => 'replace_new_wishlist_form',
                      :replace_contents => "code[erb-loud]:contains('form_for')",
                      :closing_selector => "code[erb-silent]:contains('end')",
