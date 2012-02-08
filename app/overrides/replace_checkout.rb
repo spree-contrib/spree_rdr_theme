@@ -16,7 +16,7 @@ Deface::Override.new(:virtual_path => %q{spree/checkout/edit},
         <li <%= @order.confirm? && controller.action_name != "registration" ? "class='active'" : "" %>><span class="number">5</span><span class="title">Place Order</span></li>
       </ul>
     </div>
-    <%= form_for @order, :url => update_checkout_path(@order.state) do |form| %>
+    <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
       <%= render @order.state, :form => form %>
     <% end %>
   </div>

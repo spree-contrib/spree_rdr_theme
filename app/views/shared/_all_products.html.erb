@@ -17,6 +17,6 @@
 </div>
 <% if Rails.application.railties.all.map(&:railtie_name).include? "spree_recently_viewed" %>
   <div id="recent-products" class="list-box">
-    <%= render "spree/shared/recently_viewed_products" %>
+    <%= render "shared/recently_viewed_products" %>
   </div>
 <% end %>
