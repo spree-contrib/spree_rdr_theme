@@ -37,7 +37,7 @@ if Rails.application.railties.all.map(&:railtie_name).include? "spree_social"
 <h3>Link Accounts</h3>
 <p>You can link your RailsDog Radio account with an account you already have on any of the following sites:</p>
 <% Spree::AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
-  <%= link_to(image_tag("store/social/#{user.preferred_provider}_32.png", :size => "32x32", :alt => "#{user.preferred_provider}"), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym), :title => "Sign in with #{user.preferred_provider}") if user.active %>
+  <%= link_to(image_tag("store/social/#{user.provider}_32.png", :size => "32x32", :alt => "#{user.provider}"), "/users/auth/#{user.provider}", :title => "Sign in with #{user.provider}") if user.active %>
 <% end %>
   })
 
