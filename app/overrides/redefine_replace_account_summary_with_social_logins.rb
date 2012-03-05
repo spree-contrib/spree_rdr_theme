@@ -19,7 +19,7 @@ if Rails.application.railties.all.map(&:railtie_name).include? "spree_social"
     <% @user.user_authentications.each do |auth| %>
       <tr class="<%= cycle('even', 'odd') %>">
         <td class="normal">
-          <%= image_tag "store/social/#{auth.provider}_32.png", :size => "32x32" %>
+          <%= image_tag "/assets/store/#{auth.provider}_32.png", :size => "32x32" %>
           <%= auth.provider.capitalize %>
         </td>
         <td class="normal"><%= auth.nickname %></td>
@@ -37,7 +37,7 @@ if Rails.application.railties.all.map(&:railtie_name).include? "spree_social"
 <h3>Link Accounts</h3>
 <p>You can link your RailsDog Radio account with an account you already have on any of the following sites:</p>
 <% Spree::AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
-  <%= link_to(image_tag("store/social/#{user.provider}_32.png", :size => "32x32", :alt => "#{user.provider}"), "/users/auth/#{user.provider}", :title => "Sign in with #{user.provider}") if user.active %>
+  <%= link_to(image_tag("/assets/store/#{user.provider}_32.png", :size => "32x32", :alt => "#{user.provider}"), "/users/auth/#{user.provider}", :title => "Sign in with #{user.provider}") if user.active %>
 <% end %>
   })
 
