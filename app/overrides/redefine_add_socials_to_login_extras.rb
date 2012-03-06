@@ -8,4 +8,7 @@ if Rails.application.railties.all.map(&:railtie_name).include? "spree_social"
                        :name => "add_socials_to_login_extras",
                        :disabled => true)
 
+  Deface::Override.new(:virtual_path => "spree/users/show",
+                       :name => "add_socials_to_account_summary",
+                       :disabled => true)
 end
