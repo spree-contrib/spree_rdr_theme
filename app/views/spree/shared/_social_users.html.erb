@@ -4,7 +4,9 @@
     <p>If you have an existing account with any of the following sites you can login here by clicking on the icon below.</p>
     <% Spree::AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
       <p class="social_link">
-      <%= link_to(image_tag("store/icons/#{user.provider}.png", :alt => "#{user.provider}"), "/users/auth/#{user.provider}", :title => "Sign in with #{user.provider}") if user.active %>
+      <%= link_to "Sign in with #{user.provider.capitalize}", "/users/auth/#{user.provider}",
+      :title => "Sign in with #{user.provider}",
+      :class => "btn-auth btn-#{user.provider.downcase}" if user.active %>
       </p>
     <% end %>
   </div>

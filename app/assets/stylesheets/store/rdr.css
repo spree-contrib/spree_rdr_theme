@@ -10,6 +10,7 @@
  *= require store/login
  *= require store/social
  *= require store/errors
+ *= require store/auth-buttons
  *= require jq-autocomplete
  *= require jq-mobile-1.0a2
 */
