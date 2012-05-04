@@ -5,7 +5,6 @@ Deface::Override.new(:virtual_path => %q{spree/products/show},
                           :text => %q{<div id="cart-form" data-hook="cart_form">
     <%= form_for :order, :url => populate_orders_url do |f| %>
     
-      <% if product_price(@product) %>
         <%= hidden_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => "title", :size => 3 %>
     
         <dl class="part-numbers clearfix">
@@ -32,8 +31,6 @@ Deface::Override.new(:virtual_path => %q{spree/products/show},
         </dl>
         <hr />
     
-      <% end %>
-
     
       <hr />
     
