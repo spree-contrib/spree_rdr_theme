@@ -1,0 +1,2 @@
+<!-- insert_after "code[erb-loud]:contains('stylesheet_link_tag')" -->
+<link href="<%=request.protocol%>fonts.googleapis.com/css?family=Arvo:regular,italic" rel="stylesheet" type="text/css">
