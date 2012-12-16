@@ -27,7 +27,7 @@ Deface::Override.new(:virtual_path => %q{spree/orders/_form},
     <tr class="totals">
       <td colspan="6">&nbsp;</td>
       <td colspan="2" class="totals">
-        <%= t(:subtotal) %>: <span class="order-total"><%= order_subtotal(@order) %></span>
+        <%= t(:subtotal) %>: <span class="order-total"><%= @order.item_total %></span>
       </td>
     </tr>
   </tbody>
