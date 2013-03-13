@@ -2,7 +2,7 @@ Deface::Override.new(:virtual_path => %q{spree/orders/edit},
                           :name => %q{replace_outside_cart_form},
                           :replace => %q{[data-hook='outside_cart_form']},
                           :closing_selector => %q{},
-                          :text => %q{<%= form_for(@order, :url => update_cart_path, :html=>{:id=>'updatecart'}) do |order_form| %>
+                          :text => %q{<%= form_for(@order, :url => update_cart_path, :html=>{:id=>'update-cart'}) do |order_form| %>
 
     <h3>You have <%= pluralize @order.line_items.length, 'item' %> in your cart</h3>
 
