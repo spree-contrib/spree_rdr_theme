@@ -3,7 +3,7 @@
 <h1>Wish List - <%= @wishlist.name %><%= link_to "(edit)", "#", :id => "edit_wishlist_link" %></h1>
 
 <div id="edit_wishlist">
-  <% if @wishlist.user == current_user %>
+  <% if @wishlist.user == current_spree_user %>
     <%= form_for @wishlist do |f| %>
       <div>
         <p><%= f.label :name, t(:name), :class => "inline" %>:&nbsp;<%= f.text_field :name %></p>
@@ -52,13 +52,13 @@
               <%= link_to "Remove", wish, :method => :delete, :class => 'delete button' %>
             </div>
 
-            <% if current_user.wishlists.count > 1 %>
+            <% if current_spree_user.wishlists.count > 1 %>
               <div class="move_item">
                 <%= link_to "Move", '#', :class => 'button' %>
 
                 <%= form_for wish do |f| %>
                   <label class="inline">Move to:</label>
-                  <%= f.select :wishlist_id, current_user.wishlists.map{|wl| [wl.name, wl.id] unless wl.id == @wishlist.id}.compact %>
+                  <%= f.select :wishlist_id, current_spree_user.wishlists.map{|wl| [wl.name, wl.id] unless wl.id == @wishlist.id}.compact %>
                   <%= f.submit "Confirm" %>
                 <% end %>
               </div>
@@ -75,7 +75,7 @@
 <% end -%>
 
 <p class="actions">
-  <% if @wishlist.user == current_user %>
+  <% if @wishlist.user == current_spree_user %>
     <%= link_to "Create New List", new_wishlist_path, :class => 'button' %> &nbsp;
     <%= link_to "Delete This List", @wishlist, :method => :delete, :confirm => 'Are you sure, that you want to delete this wishlist?', :class => 'button checkout' %>
   <% end -%>
